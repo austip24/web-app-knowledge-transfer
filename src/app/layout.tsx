@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { cn } from "@/lib/utils";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +17,9 @@ type RootLayoutProps = {
 const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
     <html lang="en" className="antialiased">
-      <body className={inter.className}>{children}</body>
+      <body className={cn(inter.className, "h-screen overflow-hidden")}>
+        {children}
+      </body>
     </html>
   );
 };
